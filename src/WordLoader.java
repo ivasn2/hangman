@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class WordLoader {
-    // Чтение файла и добавление его в список слов - метод
     public static ArrayList<String> wordLoader(String fileName) {
         ArrayList<String> words = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
@@ -13,7 +12,8 @@ public class WordLoader {
                 words.add(line);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Ошибка при чтении файла: " + e.getMessage());
+            return null;
         }
         return words;
     }
