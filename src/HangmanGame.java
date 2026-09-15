@@ -3,31 +3,24 @@ import java.util.Set;
 
 public class HangmanGame {
 
-    private String randomItem;
-    private Set<Character> necessaryLetters;
-    private Set<Character> unNecessaryLetters;
+    private final String randomItem;
+    private final Set<Character> necessaryLetters;
+    private final Set<Character> unNecessaryLetters;
     private int mistakes;
-    private String result;
-    private StringBuilder stringBuilder;
 
     public int getMistakes() {
         return mistakes;
     }
 
     public HangmanGame(String word) {
-        this.stringBuilder = new StringBuilder();
-
         this.necessaryLetters = new HashSet<>();
         this.unNecessaryLetters = new HashSet<>();
-
-        this.result = "*";
         this.mistakes = HangmanRenderer.getStagesCount() - 1;
-
         this.randomItem = word;
     }
 
     public String buildMask() {
-        stringBuilder.setLength(0);
+        StringBuilder stringBuilder = new StringBuilder();
         for (Character character : randomItem.toCharArray()) {
             if (necessaryLetters.contains(character)) {
                 stringBuilder.append(character);
@@ -35,8 +28,7 @@ public class HangmanGame {
                 stringBuilder.append("*");
             }
         }
-        result = stringBuilder.toString();
-        return result;
+        return stringBuilder.toString();
     }
 
     public String processLetter(String letter) {
@@ -58,7 +50,7 @@ public class HangmanGame {
         return "";
     }
     public boolean isWon() {
-        return !result.contains("*");
+        return !buildMask().contains("*");
     }
     public boolean isLost() {
         return mistakes == 0;
