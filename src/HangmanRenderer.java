@@ -53,4 +53,8 @@ public class HangmanRenderer {
     public static String drawHangman(int mistakes) {
         return String.join("\n", HANGMAN_STAGES[mistakes]);
     }
+
+    public static int getStagesCount() {
+        return HANGMAN_STAGES.length;
+    }
 }

@@ -21,7 +21,7 @@ public class HangmanGame {
         this.unNecessaryLetters = new HashSet<>();
 
         this.result = "*";
-        this.mistakes = 5;
+        this.mistakes = HangmanRenderer.getStagesCount() - 1;
 
         this.randomItem = word;
     }
