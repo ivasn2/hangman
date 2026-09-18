@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Random random = new Random();
-        ArrayList<String> words = WordLoader.wordLoader("words.txt");
+        List<String> words = WordLoader.wordLoader("words.txt");
         if (words == null || words.isEmpty()) {
             System.out.println("Ошибка при чтении файла");
             System.exit(1);
