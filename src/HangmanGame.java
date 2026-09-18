@@ -15,7 +15,7 @@ public class HangmanGame {
     public HangmanGame(String word) {
         this.guessedLetters = new HashSet<>();
         this.incorrectLetters = new HashSet<>();
-        this.mistakes = HangmanRenderer.getStagesCount() - 1;
+        this.mistakes = PictureStorage.getStagesCount() - 1;
         this.word = word;
     }
 

@@ -1,12 +1,14 @@
-public class HangmanRenderer {
+public class PictureStorage {
     private static final String[][] HANGMAN_STAGES = {
-            {
-                    " ___   ",
-                    "|   |   ",
-                    "|   O   ",
-                    "|  (|)   ",
-                    "|  //    ",
-                    "======== ",
+            {        """
+                     ___
+                    |   |
+                    |   O
+                    |  (|)
+                    |  //
+                    ========
+                """
+
             },
             {
                     " ____   ",

@@ -22,7 +22,7 @@ public class Main {
                 System.out.println("--------------");
                 while (!game.isWon() && !game.isLost()) {
                     System.out.println("Слово: " + game.buildMask());
-                    System.out.println(HangmanRenderer.drawHangman(game.getMistakes()));
+                    System.out.println(PictureStorage.drawHangman(game.getMistakes()));
                     System.out.print("Введите букву: ");
                     String letter = letterInput.get(input, "Введите русскую букву");
                     System.out.println(game.processLetter(letter));
@@ -33,7 +33,7 @@ public class Main {
                     System.out.println("| Вы отгадали слово! Вы выиграли! |");
                     System.out.println("-----------------------------------");
                 } else {
-                    System.out.println(HangmanRenderer.drawHangman(game.getMistakes()));
+                    System.out.println(PictureStorage.drawHangman(game.getMistakes()));
                     System.out.println("------------------------------------");
                     System.out.println("| Вы проиграли! Попробуйте еще раз |");
                     System.out.println("------------------------------------");
