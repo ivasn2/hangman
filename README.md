@@ -67,7 +67,7 @@ E — выйти из приложения
 ## 🙏 Благодарности
 
 Спасибо за ревью проекта:
-* [raketareview](https://github.com/raketareview) — GitHub, Telegram: [@Raketa4000az](https://t.me/Raketa4000az)
+* [raketareview](https://github.com/raketareview) — GitHub, Telegram: [@Raketa4000az](https://t.me/Raketa4000az) ([текст ревью](https://github.com/raketareview/hangman-review/blob/master/content/rev-hm190-ivan-ivasn2.md))
 
 ## 📖 Основа проекта
 
