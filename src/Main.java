@@ -13,7 +13,7 @@ public class Main {
             int randomIndex = random.nextInt(words.size());
             String randomItem = words.get(randomIndex).toLowerCase();
             System.out.println("[N]ew game or [E]xit ?");
-            String userAnswer = InputValidator.validateInput(input, "Введите n или e", false);
+            String userAnswer = RusLetterInput.validateInput(input, "Введите n или e", false);
             if (userAnswer.equalsIgnoreCase("N")) {
                 HangmanGame game = new HangmanGame(randomItem);
                 System.out.println("--------------");
@@ -23,7 +23,7 @@ public class Main {
                     System.out.println("Слово: " + game.buildMask());
                     System.out.println(HangmanRenderer.drawHangman(game.getMistakes()));
                     System.out.print("Введите букву: ");
-                    String letter = InputValidator.validateInput(input, "Введите букву", true);
+                    String letter = RusLetterInput.validateInput(input, "Введите букву", true);
                     System.out.println(game.processLetter(letter));
                 }
                 if (game.isWon()) {
