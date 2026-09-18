@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Random random = new Random();
+        LetterInput letterInput = new RusLetterInput();
         List<String> words = WordLoader.wordLoader("words.txt");
         if (words == null || words.isEmpty()) {
             System.out.println("Ошибка при чтении файла");
@@ -13,7 +14,7 @@ public class Main {
             int randomIndex = random.nextInt(words.size());
             String randomItem = words.get(randomIndex).toLowerCase();
             System.out.println("[N]ew game or [E]xit ?");
-            String userAnswer = RusLetterInput.validateInput(input, "Введите n или e", false);
+            String userAnswer = inputCommand(input, "Введите n или e");
             if (userAnswer.equalsIgnoreCase("N")) {
                 HangmanGame game = new HangmanGame(randomItem);
                 System.out.println("--------------");
@@ -23,7 +24,7 @@ public class Main {
                     System.out.println("Слово: " + game.buildMask());
                     System.out.println(HangmanRenderer.drawHangman(game.getMistakes()));
                     System.out.print("Введите букву: ");
-                    String letter = RusLetterInput.validateInput(input, "Введите букву", true);
+                    String letter = letterInput.get(input, "Введите русскую букву");
                     System.out.println(game.processLetter(letter));
                 }
                 if (game.isWon()) {
@@ -44,6 +45,12 @@ public class Main {
             }
         }
     }
-
-
+    private static String inputCommand(Scanner scanner, String errorMessage) {
+        String value = scanner.nextLine();
+        while (value.isEmpty()) {
+            System.out.println(errorMessage);
+            value = scanner.nextLine();
+        }
+        return value;
+    }
 }
